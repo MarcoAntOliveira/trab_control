@@ -71,7 +71,7 @@ def routh_hurwitz(coefficients):
     is_stable = sign_changes == 0
 
     return routh_table, is_stable
-def malha_fechada_routh(control_system:list, Kp:float):
+def malha_fechada_routh(control_system:list, Kp:float): #precisa melhorar 
     """
     Verifica a estabilidade do sistema em malha fechada com controle proporcional.
     
@@ -97,7 +97,7 @@ def malha_fechada_routh(control_system:list, Kp:float):
     
     return routh_table, is_stable
 
-def ziegler_nichols_second_method(open_loop: list, controller_type="PID"):
+def ziegler_nichols_second_method(open_loop: control.TransferFunction, controller_type="PID"):
     """
     Calcula os parâmetros do controlador usando o segundo método de Ziegler-Nichols.
     
